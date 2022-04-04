@@ -1,0 +1,27 @@
+<h2>Thêm Sinh Viên</h2>
+<form action="/student/edit-process/<%= rs.id %>" method="post" enctype="multipart/form-data">
+    tên: <input type="text" name="name" id="name" value="<%= rs.name %>">
+    <br>
+    tuổi: <input type="number" name="age" value="<%= rs.age %>">
+    <br>
+    email: <input type="text" name="email" value="<%= rs.email %>">
+    <br>
+    img:
+    <input type="file" name="image" id="asgnmnt_file" class="span8" style="display:none;"
+    onchange="fileSelected(this)">
+    <br><br>
+    <img id="asgnmnt_file_img" src='<%= rs.img %>' width="150" height="150" onclick="passFileUrl()"
+        style="cursor:pointer;">
+    <script>
+         function passFileUrl() {
+            document.getElementById('asgnmnt_file').click();
+        }
+
+        function fileSelected(inputData) {
+            console.log(window.URL.createObjectURL(inputData.files[0]))
+            document.getElementById('asgnmnt_file_img').src = window.URL.createObjectURL(inputData.files[0])
+        }
+    </script>
+        <br>
+    <button>thêm</button>   
+</form>
