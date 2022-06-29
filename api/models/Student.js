@@ -6,42 +6,54 @@
  */
 
 module.exports = {
+    attributes: {
+        id: {
+            type: 'number',
+            autoIncrement: true,
+        },
 
-  attributes: {
-    id: {
-      type: "number",
-      autoIncrement: true
+        name: {
+            type: 'string',
+            maxLength: 150,
+        },
+
+        age: {
+            type: 'number',
+        },
+
+        email: {
+            type: 'string',
+            minLength: 5,
+            maxLength: 100,
+        },
+
+        pass: {
+            type: 'string',
+            minLength: 8,
+            maxLength: 255,
+        },
+
+        class: {
+            type: 'number',
+        },
+
+        img: {
+            type: 'json',
+        },
     },
 
-    name: {
-      type: "string",
-      maxLength: 150
+    beforeCreate: async function (ins, cb) {
+        try {
+            let rs = await Student.findOne({ name: ins.name });
+            if (rs) {
+                throw 'name already exist';
+            }
+            cb();
+        } catch (error) {
+            cb({
+                code: 1,
+                message: 'thất bại',
+            });
+        }
     },
-
-    age: {
-      type: "number",
-    },
-
-    email: {
-      type: "string",
-      minLength: 5,
-      maxLength: 100,
-    },
-
-    pass: {
-      type: "string",
-      minLength: 8,
-      maxLength: 255,
-    },
-
-    class: {
-      type: "number",
-    },
-
-    img:{
-      type:"json"
-    }
-  },
-
 };
-

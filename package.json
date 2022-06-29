@@ -9,6 +9,8 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "bcrypt": "^5.0.1",
+    "cloudinary": "^1.29.1",
+    "dotenv": "^16.0.0",
     "grunt": "1.0.4",
     "jsonwebtoken": "^8.5.1",
     "lodash.uniqby": "^4.7.0",
@@ -18,7 +20,8 @@
     "sails-hook-grunt": "^5.0.0",
     "sails-hook-orm": "^4.0.0",
     "sails-hook-sockets": "^2.0.0",
-    "sails-mysql": "^2.0.0"
+    "sails-mysql": "^2.0.0",
+    "streamifier": "^0.1.1"
   },
   "devDependencies": {
     "eslint": "5.16.0"

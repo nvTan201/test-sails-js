@@ -43,4 +43,6 @@ module.exports.routes = {
   "GET /student/destroy/:id": { action: 'student/destroy' },
   "POST /login-process": { action: 'authenticated/login' },
   "GET /logout": { action: 'authenticated/logout' },
+
+  "GET /test/test": { action: 'test/test'}
 };

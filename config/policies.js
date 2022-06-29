@@ -8,18 +8,16 @@
  * https://sailsjs.com/docs/concepts/policies
  */
 
-const isAuthorized = require("../api/policies/isAuthorized");
+const isAuthorized = require('../api/policies/isAuthorized');
 
 module.exports.policies = {
+    /***************************************************************************
+     *                                                                          *
+     * Default policy for all controllers and actions, unless overridden.       *
+     * (`true` allows public access)                                            *
+     *                                                                          *
+     ***************************************************************************/
 
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions, unless overridden.       *
-  * (`true` allows public access)                                            *
-  *                                                                          *
-  ***************************************************************************/
-
-  '*': true,
-  'student/*': isAuthorized
-
+    '*': true,
+    'student/*': true,
 };
